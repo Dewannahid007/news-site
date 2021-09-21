@@ -1,5 +1,10 @@
 <?php
 include "config.php";
+if($_SESSION['user_role']=='0'){
+
+    header("location: http://localhost/php-project/news-template/admin/post.php");
+    
+    }
 $userid= $_GET['id'];
 $sql="DELETE FROM user where user_id ={$userid}";
 if(mysqli_query($conn,$sql)){

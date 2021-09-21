@@ -1,3 +1,13 @@
+<?php
+session_start();
+include "config.php";
+if(!isset($_SESSION['username'])){
+    
+    header("location:http://localhost/php-project/news-template/admin/");
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,12 +53,21 @@
                             <li>
                                 <a href="post.php">Post</a>
                             </li>
+                            <?php
+                            if($_SESSION['user_role']=='1'){
+
+                            
+                            ?>
                             <li>
                                 <a href="category.php">Category</a>
                             </li>
                             <li>
                                 <a href="users.php">Users</a>
                             </li>
+                            <?php
+                            }
+
+                            ?>
                         </ul>
                     </div>
                 </div>
